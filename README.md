@@ -1,4 +1,3 @@
-# pdf_challenge
 # Legislation and Standards Clause Processor
 
 This program is designed to process legislation and standards documents, specifically the Pressure Equipment (Safety) Regulations (PER), and extract clauses along with their associated metadata. The program reads the PER document in PDF format, parses the clause text and clause numbers, determines the type of requirement (must, shall, or should), and exports the extracted information to a CSV file.
