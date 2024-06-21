@@ -54,10 +54,13 @@ This program is designed to process legislation and standards documents, specifi
 
 ## Future Enhancements
 
+- Use ths to organise unstructured pdf for RAG implementation with LLMs for users to interact with data from pdfs accurately.
+- Direct integration with vector databases for Machine learning model use
 - Improving the accuracy of section and clause parsing by handling more complex document structures and edge cases.
-- Adding error handling and logging to gracefully handle any exceptions or unexpected scenarios during the processing.
-- Implementing a command-line interface or graphical user interface to allow users to input the PDF file path and specify output options.
-- Extending the program to support processing multiple PDF files in a batch mode.
+- Adding error handling and logging to handle any exceptions or unexpected scenarios during the processing.
+- Extending the program to support processing multiple PDF files.
 - Enhancing the requirement type detection by considering additional keywords or patterns specific to the domain.
+- 
+
 
 ~ Vincent Mendy
