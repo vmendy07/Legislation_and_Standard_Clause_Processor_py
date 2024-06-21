@@ -6,11 +6,11 @@ This program is designed to process legislation and standards documents, specifi
 
 - PDF Processing: The program uses the `pymupdf` library to open and read the PER document in PDF format. It iterates through each page of the document and extracts the structured text.
 
-- Clause Parsing: Regular expressions are used to split the text into sections based on section headers and section numbers. The program extracts section headers, section numbers, and the corresponding text for each section. If a section header is missing, the program assigns the last known header to maintain consistency. The section text is further split into sub-sections based on sub-index patterns (numeric, alphabetic a-h, or roman numerals). Each sub-section is processed to extract the clause text and clause numbers.
+- Clause Parsing: Regular expressions are used to split the text into sections based on section headers and section numbers. The program extracts section headers, section numbers, and the corresponding text for each section. If a section header is missing, the program assigns the last known header to maintain consistency. The section text is further split into sub-sections based on sub-index patterns (numeric, alphabetic a-z, or roman numerals). Each sub-section is processed to extract the clause text and clause numbers.
 
 - Requirement Type Determination: The program defines a function called `detect_requirement_types()` to determine the type of requirement for each clause. It searches for the presence of the words "must," "shall," or "should" (case-insensitive) in the clause text using regular expressions. The function returns a list of the requirement types found in the clause text.
 
-- CSV Export: The program opens a CSV file named "clause_info.csv" for writing. It writes a header row to the CSV file with the column names: "section," "clause_number," "clause_text," and "requirement_type." For each clause, the program writes a row to the CSV file containing the section header, clause number, clause text, and the requirement types found. Newline characters in the section header and clause text are replaced with spaces to ensure proper formatting in the CSV file.
+- CSV Export: The program opens a CSV file named `clause_info.csv` for writing. It writes a header row to the CSV file with the column names: "section," "clause_number," "clause_text," and "requirement_type." For each clause, the program writes a row to the CSV file containing the section header, clause number, clause text, and the requirement types found. Newline characters in the section header and clause text are replaced with spaces to ensure proper formatting in the CSV file.
 
 - Reusability and Repeatability: The program is designed with reusability and repeatability in mind. It uses modular functions to encapsulate specific tasks and make the code more readable and maintainable. The code is structured in a way that allows for easy modification and adaptation to process similar documents with different formats or requirements.
 
@@ -18,6 +18,9 @@ This program is designed to process legislation and standards documents, specifi
 
 - Python 3.x
 - `pymupdf` library
+- `regex` library
+- CSV module (built-in)
+
 
 ## Usage
 
@@ -36,6 +39,18 @@ This program is designed to process legislation and standards documents, specifi
 4. The program will process the PER document and extract the clauses along with their metadata.
 
 5. The extracted information will be exported to a CSV file named "clause_info.csv" in the same directory.
+
+## Customization
+
+- To process a different PDF, update the filename in the `pymupdf.open()` function call.
+- To modify requirement types, edit the `detect_requirement_types()` function.
+- To change the output format, modify the CSV writing section at the end of the script.
+
+## Limitations
+
+- The current implementation is optimized for the specific structure of the PER document.
+- Very large PDFs may require additional optimization for performance.
+- The script assumes a consistent document structure; significant deviations may require code adjustments.
 
 ## Future Enhancements
 
