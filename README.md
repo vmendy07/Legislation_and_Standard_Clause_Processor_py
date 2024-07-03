@@ -60,7 +60,6 @@ This program is designed to process legislation and standards documents, specifi
 - Adding error handling and logging to handle any exceptions or unexpected scenarios during the processing.
 - Extending the program to support processing multiple PDF files.
 - Enhancing the requirement type detection by considering additional keywords or patterns specific to the domain.
-- 
 
 
 ~ Vincent Mendy
